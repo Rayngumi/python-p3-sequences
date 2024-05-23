@@ -10,8 +10,11 @@ def print_fibonacci(length):
     elif length == 2:
         print([0, 1])
         return
-    else:
-        sequence = [0, 1]
-        for i in range(2, length):
-            sequence.append(sequence[i - 1] + sequence[i - 2])
-        print(sequence)
+
+    sequence = [0, 1]
+    while len(sequence) < length:
+        next_number = sequence[-1] + sequence[-2]
+        sequence.append(next_number)
+    print(sequence)
+
+print_fibonacci(10)
